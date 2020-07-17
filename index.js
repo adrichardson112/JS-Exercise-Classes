@@ -170,7 +170,7 @@ class Student extends Lambdasian{
     this.favSubjects = attributes.favSubjects;
   }
   listSubjects() {
-    return `Loving HTML, CSS, JS!`;
+    return `Loving ${this.favSubjects}`;
   }
   PRAssignment (subject) {
     return `${this.name} has submitted a PR for ${subject}`;
@@ -193,8 +193,18 @@ class Student extends Lambdasian{
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor {
+  constructor(attributes) {
+    super(attributes);
+    this.gradClassName = attributes.gradClassName;
+    this.favInstructor = attributes.favInstructor;
+  }
+  standUp (channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!`;
+  }
+  debugsCode (student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  }
 }
 
 /*
